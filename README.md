@@ -54,15 +54,12 @@ Twisted==18.7.0
 
 * `scrapy`中使用到了`Twisted`框架，如果在安装scrapy过程中提示Twisted安装错误：
 
-  可以到
+  可以到[https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted](https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted)下载Twisted 的离线文件安装。
 
-[Twisted]: https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted
-
-​	下载Twisted 的离线文件安装。
 
 * 若出现 `ImportError: No module named 'win32api'` 错误，下载安装 
 
-  [pywin32]: https://sourceforge.net/projects/pywin32/files/pywin32/
+  [pywin32](https://sourceforge.net/projects/pywin32/files/pywin32/)
 
 
 ## 第二步：配置基本信息
@@ -72,28 +69,27 @@ Twisted==18.7.0
 
 * 因为数据量较大，所以使用了 mysql 作为存储工具，可在setting里设置，具体设置方法如下：
 
-```
-# 配置mysql, 使用sqlalchemy的creteengine
-user = "root"  # mysql用户名
-passwd = "adas123456"  # mysql用户密码
-host = "localhost"  # mysql ip address
 
-db = "mycrawdata"  # 用于设置数据库名，这个必须提前创建好
-charset = 'utf8'  # 编码
-mysql_settings = "mysql+pymysql://{user}:{passwd}@{host}/{db}?charset={charset}".format(user=user, passwd=passwd,
-                                                                                        host=host, db=db,
-                                                                                        charset=charset)
-engine = create_engine(mysql_settings)
+		# 配置mysql, 使用sqlalchemy的creteengine
+		user = "root"  # mysql用户名
+		passwd = "adas123456"  # mysql用户密码
+		host = "localhost"  # mysql ip address
+		
+		db = "mycrawdata"  # 用于设置数据库名，这个必须提前创建好
+		charset = 'utf8'  # 编码
+		mysql_settings = "mysql+pymysql://{user}:{passwd}@{host}/{db}?charset={charset}".format(user=user, passwd=passwd,
+		                                                                                        host=host, db=db,
+		                                                                                        charset=charset)
+		engine = create_engine(mysql_settings)
+		
+		# 设置数据库表名，在这里填写名字即可，若不存在会自动创建
+		write_sql_table_name = "stats_gov_cn_data"
 
-# 设置数据库表名，在这里填写名字即可，若不存在会自动创建
-write_sql_table_name = "stats_gov_cn_data"
-```
 
 * 默认采集所有年份的数据，如果仅需要采集指定年份的数据，只需要在`setting`里设置`year_settings`为指定年份即可，注意输入数字，不要带引号`""`，如下所示：
 
-  ```python
-  year_settings = 2017
-  ```
+ 	year_settings = 2017
+
 
 * 其他设置参考 `scrapy`官方文档。
 
