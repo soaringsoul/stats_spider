@@ -68,7 +68,7 @@ Twisted==18.7.0
 
   截止到本月（2018年10月），已经有2009~2017年 共9年的的数据，数据量预计在72万左右，scrapy框架自带多线程，后来又对采集存储的`pipeline`进行了优化，全部采集完预计要6~8个小时。
 
-* 因为数据量较大，所以使用了 mysql 作为存储工具，可在setting里设置，具体设置方法如下：
+* 因为数据量较大，所以使用了 mysql 作为存储工具，可在`setting.py`里设置，具体设置方法如下：
 
 
 		# 配置mysql, 使用sqlalchemy的creteengine
@@ -77,7 +77,7 @@ Twisted==18.7.0
 		host = "localhost"  # mysql ip address
 		
 		db = "mycrawdata"  # 用于设置数据库名，这个必须提前创建好
-		charset = 'utf8'  # 编码
+		charset = 'utf8'  # 指定编码
 		mysql_settings = "mysql+pymysql://{user}:{passwd}@{host}/{db}?charset={charset}".format(user=user, passwd=passwd,
 		                                                                                        host=host, db=db,
 		                                                                                        charset=charset)
@@ -87,7 +87,7 @@ Twisted==18.7.0
 		write_sql_table_name = "stats_gov_cn_data"
 
 
-* 默认采集所有年份的数据，如果仅需要采集指定年份的数据，只需要在`setting`里设置`year_settings`为指定年份即可，注意输入数字，不要带引号`""`，如下所示：
+* 默认采集所有年份的数据，如果仅需要采集指定年份的数据，只需要在`setting.py`里设置`year_settings`为指定年份即可，注意输入数字，不要带引号`""`，如下所示：
 
  	year_settings = 2017
 
