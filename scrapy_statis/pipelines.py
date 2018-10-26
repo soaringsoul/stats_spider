@@ -1,18 +1,8 @@
 # -*- coding: utf-8 -*-
-
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
-import pandas as pd
-from pandas import DataFrame
-import sqlalchemy
-from tools import mysql_engine, read_cfg
-import time
 import re
 
-db_cfg = read_cfg('db.cfg')
-engine_mysql = mysql_engine(**db_cfg['localhost'])
+from pandas import DataFrame
+from scrapy_statis.settings import engine, write_sql_table_name
 
 
 class ScrapyStatisPipeline(object):
@@ -40,7 +30,7 @@ class ScrapyStatisPipeline(object):
             tmp_lsts.append(tmp_lst)
 
         df = DataFrame(tmp_lsts, columns=new_col)
-        print('*'*6,'【%s】' % item['city'], '*'*6,)
+        print('*' * 6, '【%s】' % item['city'], '*' * 6, )
         print(df['village'])
-        df.to_sql('china_community_db_all_2018', engine_mysql, if_exists='append', index=False)
+        df.to_sql(write_sql_table_name, engine, if_exists='append', index=False)
         return item
