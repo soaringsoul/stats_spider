@@ -113,9 +113,12 @@ Twisted==18.7.0
 
 * mysql中查询结果示例
 
-![](.\screenshots\sql_result.jpg)
+
+![](./screenshots/sql_result.jpg)
+
 
 * 导出的excel结果示例
 
-![](.\screenshots\result_part.png)
+
+![](./screenshots/result_part.png)
 
