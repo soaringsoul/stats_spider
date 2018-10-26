@@ -7,9 +7,9 @@
 本爬虫使用了scrapy框架，功能为采集[国家统计局2009年~2017年统计用区划和城乡划分代码](http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/)。
 
 如下图所示：
-![index1](screenshots/index1.png)
+![index1](./screenshots/index1.png)
 
-![screenshots/](screenshots/index2.png)
+![screenshots/](./screenshots/index2.png)
 
 # 采集的数据维度
 
@@ -101,20 +101,24 @@ write_sql_table_name = "stats_gov_cn_data"
 
 两种启动方式：
 
-	1. 在程序根目录，运行`python run.py`
+* 在程序根目录，运行`python run.py`
 
 
-​	![](G:\PythonProjectsFromGithub\www.stats.gov.cn_spider\screenshots\run.py.jpg)
-​	2. 在程序根目录，运行`scrapy crawl stats_spider`
-
-![](G:\PythonProjectsFromGithub\www.stats.gov.cn_spider\screenshots\scrapy_crawl_run.jpg)
+​![python run.py](./screenshots\run.py.jpg)
 
 
-第四步：在mysql中查看抓取结果
+​* 在程序根目录，运行`scrapy crawl stats_spider`
 
-![](G:\PythonProjectsFromGithub\www.stats.gov.cn_spider\screenshots\sql_result.jpg)
+![scrapy crawl stats_spider](./screenshots/scrapy_crawl_run.jpg)
 
 
+## 第四步：在mysql中查看抓取结果
 
-![](G:\PythonProjectsFromGithub\www.stats.gov.cn_spider\screenshots\result_part.png)
+* mysql中查询结果示例
+
+![](.\screenshots\sql_result.jpg)
+
+* 导出的excel结果示例
+
+![](.\screenshots\result_part.png)
 
