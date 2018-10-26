@@ -104,7 +104,7 @@ write_sql_table_name = "stats_gov_cn_data"
 * 在程序根目录，运行`python run.py`
 
 
-​![python run.py](./screenshots\run.py.jpg)
+​![python run.py](./screenshots/run.py.jpg)
 
 
 ​* 在程序根目录，运行`scrapy crawl stats_spider`
