@@ -4,9 +4,12 @@
 
 # 功能概述
 
-本爬虫使用了scrapy框架，功能为采集[国家统计局2009年~2017年统计用区划和城乡划分代码](http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/)。
+本爬虫使用了scrapy框架，功能为采集[国家统计局2009年~迄今国家统计局统计用区划和城乡划分代码](http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/)。
 
-如下图所示：
+也可以只采集指定年份的计用区划和城乡划分代码
+
+
+国家统计局统计用区划和城乡划分代码页面如如下图所示：
 ![index1](./screenshots/index1.png)
 
 ![screenshots/](./screenshots/index2.png)
@@ -38,7 +41,9 @@
 | district_tmp_code   | 乡镇临时代码     | 可忽略                                                       |
 
 # 使用方法
-## 第一步安装依赖：使用  `pip install -r requirements.txt`安装以下依赖库
+## 第一步安装依赖
+
+使用  `pip install -r requirements.txt`安装以下依赖库
 
 ```
 bs4==0.0.1
