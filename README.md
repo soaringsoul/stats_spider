@@ -1,4 +1,4 @@
-# **<u>国家统计局统计用区划和城乡划分代码 爬虫</u>** 
+# **<u>国家统计局统计用区划和城乡划分代码 采集程序使用说明</u>** 
 
 
 
@@ -81,11 +81,14 @@ Twisted==18.7.0
 
 		# 配置mysql, 使用sqlalchemy的creteengine
 		user = "root"  # mysql用户名
-		passwd = "adas123456"  # mysql用户密码
+		passwd = "123456"  # mysql用户密码
 		host = "localhost"  # mysql ip address
 		
-		db = "mycrawdata"  # 用于设置数据库名，这个必须提前创建好
+		db = "your_database_name"  # 用于设置数据库名，这个必须提前创建好
 		charset = 'utf8'  # 指定编码
+
+		# sqlalchemy配置信息，只需要在上面填写好mysql信息即可
+
 		mysql_settings = "mysql+pymysql://{user}:{passwd}@{host}/{db}?charset={charset}".format(user=user, passwd=passwd,
 		                                                                                        host=host, db=db,
 		                                                                                        charset=charset)
