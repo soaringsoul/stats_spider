@@ -120,6 +120,9 @@ Twisted==18.7.0
 ![scrapy crawl stats_spider](./screenshots/scrapy_crawl_run.jpg)
 
 
+
+![runnig](./screenshots/run.gif)
+
 ## 第四步：在mysql中查看抓取结果
 
 * mysql中查询结果示例
